@@ -15,9 +15,9 @@ function App() {
 
 return (
 
-    <> 
+    <div className="bg-taupe-400"> 
     
-    <h1> <Usercard /> </h1>
+    
     <Loading />
 
   <Routes>
@@ -38,11 +38,11 @@ return (
           <hr className="my-3" />
           <SidebarItem icon={<Settings size={20} />} text="Profile Member" />
           <SidebarItem icon={<LifeBuoy size={20} />} text="Link" />
-        </Sidebar>
+        </Sidebar> <h1> <Usercard /> </h1>
       </div>
 
 
-    </>
+    </div>
   )
 }
 

@@ -5,5 +5,3 @@ function Famillypage() {
     <div>Famillypage</div>
   )
 }
-
-export default Famillypage

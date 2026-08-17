@@ -5,12 +5,12 @@ const AuthContext = createContext()
 
 export default function AuthProvider({ children }) {
     const [user, setUser] = useState(null)
-    const [loading, setLaoding] = useState(false)
+    const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
 
     const login = async (body) => {
         try {
-            setLaoding(true)
+            setLoading(true)
             const response = await api.post("/user/login", body)
             if (response.status === 200 ){
                 setUser(response.data.user)
@@ -20,13 +20,13 @@ export default function AuthProvider({ children }) {
         } catch (error) {
             console.log(error.response)
         } finally {
-            setLaoding(false)
+            setLoading(false)
         }
     }
 
     const signup = async (body, setLogginIn, setUserInfo) => {
         try {
-            setLaoding(true)
+            setLoading(true)
             console.log(body)
             const response = await api.post("/user/signup", body)
 
@@ -44,15 +44,15 @@ export default function AuthProvider({ children }) {
             console.log(error.message)
 
         } finally{
-            setLaoding(false)
+            setLoading(false)
         }
     }
 
     const verify = async () => {
         try {
-            setLaoding(true)
+            setLoading(true)
             const response = await api.get("user/verify")
-            console.log("response in verify", reponse)
+            console.log("response in verify", response)
             if (response.status === 200) setUser(response.data)
         } catch (error) {
 
@@ -60,7 +60,7 @@ export default function AuthProvider({ children }) {
             setUser(null)
             console.log(error)
         } finally{
-            setLaoding(false)
+            setLoading(false)
         }
     }
 

@@ -11,7 +11,8 @@ export default function Sidebar({ children }) {
 
     return (
         <>
-            <aside className="flex min-h-screen">
+        <div className="flex min-h-screen">
+            <aside>
                 <nav className="h-full flex flex-col bg-black border-r shadow-sm">
                     <div className="p-4 pb-2 flex justify-between items-center h-20">
                          <img src={memkin} className={`overflow-hidden transition-all ${expanded ? "w-32" : "w-0"}`} />
@@ -38,6 +39,8 @@ export default function Sidebar({ children }) {
                     </div>
                 </nav>
             </aside>
+           
+         </div>
         </>
     )
 }
@@ -61,7 +64,8 @@ export function SidebarItem({ icon, text, active, alert, to="#" }) {
                     {text}
                 </div>
             )}
-        </li>
+        </li> 
+    
     )
 }
 

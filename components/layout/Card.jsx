@@ -2,7 +2,7 @@ function Card({ children, className = "" }) {
   return (
     <div
       className={`
-        bg-slate-300
+        bg-orange-100
         rounded-2xl
         border border-slate-400
         shadow-sm

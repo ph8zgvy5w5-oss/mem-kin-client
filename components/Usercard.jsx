@@ -1,12 +1,16 @@
 import Card from "./layout/Card"
-import ProfileMember from "./ProfileMember"
+import Buttons from "./layout/Buttons"
+//import ProfileMember from "./ProfileMember"
 function User() {
 
-  const { user, setUser }
+  //const { user, setUser }
   return (
     <div>
 
-    <Card />
+    <Card>
+    {!User ? "hello" : <Buttons to="/auth" //onClick={() => console.log("click ok")}
+    >Connection</Buttons> }
+    </Card> 
 
     </div>
   )
