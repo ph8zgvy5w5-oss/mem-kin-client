@@ -15,21 +15,9 @@ function App() {
 
 return (
 
-    <div className="bg-taupe-400"> 
+    <div className="bg-taupe-400 flex"> 
     
-    
-    <Loading />
-
-  <Routes>
-    <Route path="/" element={<Dashbordpage />} />
-    <Route path="/auth" element={<Authpage />} />
-    <Route path="/tasks/tasks" element={<Taskspage />} />
-    <Route path="/tasks/form" element={<Formpage />} />
-    <Route path="/calendar" element={<Calendarpage />} />
-    <Route path="/profile" element={<Profilpage />} />
-  </Routes>
-
-  <div className="flex">
+     <div className="flex">
         <Sidebar >
           <SidebarItem icon={<LayoutDashboard size={20} />} text="Dashboard" to="/" active />
           <SidebarItem icon={<Layers size={20} />} text="Tasks" to="/tasks/tasks" alert />
@@ -38,8 +26,21 @@ return (
           <hr className="my-3" />
           <SidebarItem icon={<Settings size={20} />} text="Profile Member" />
           <SidebarItem icon={<LifeBuoy size={20} />} text="Link" />
-        </Sidebar> <h1> <Usercard /> </h1>
+        </Sidebar> 
       </div>
+    <h1> <Usercard /> </h1>
+<Loading />
+  <Routes>
+    <Route path="/" element={<Dashbordpage />} />
+    <Route path="/auth" element={<Authpage />} />
+    <Route path="/tasks/tasks" element={<Taskspage />} />
+    <Route path="/tasks/form" element={<Formpage />} />
+    <Route path="/calendar" element={<Calendarpage />} />
+    <Route path="/profile" element={<Profilpage />} />
+  </Routes>
+ 
+
+ 
 
 
     </div>

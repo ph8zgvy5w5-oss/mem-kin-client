@@ -11,6 +11,7 @@ export default function AuthProvider({ children }) {
     const login = async (body) => {
         try {
             setLoading(true)
+            console.log(body)
             const response = await api.post("/user/login", body)
             if (response.status === 200 ){
                 setUser(response.data.user)
