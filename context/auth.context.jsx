@@ -19,6 +19,7 @@ export default function AuthProvider({ children }) {
                 navigate("/task")
             }
         } catch (error) {
+            console.log(error)
             console.log(error.response)
         } finally {
             setLoading(false)

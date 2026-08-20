@@ -25,7 +25,7 @@ console.log(userInfo)
     <form className="min-h-screen grid items-start gap-8 p-18 shadow-2xl rounded-b-full shadow-red-200" 
       onSubmit={(e) => {
       e.preventDefault()
-      const body ={ loginInfo: userInfo.loginInfo, password: userInfo.password }
+      const body ={ email: userInfo.loginInfo, password: userInfo.password }
       login(body)
     }}>
        <p className="bg-red-100 rounded-2xl text-blue-950 p-1 text-center"> You don't have an account 👩🏽‍💻 ?{" "} <button className="bg-blue-950 text-amber-50 rounded-2xl cursor-grab" type="button" onClick={() => setLogginIn(false)}>

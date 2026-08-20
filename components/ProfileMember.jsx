@@ -1,8 +1,8 @@
+import NotFound from "../pages/NotFound.jsx"
 
-function ProfileMember() {
+
+export default function ProfileMember() {
   return (
-    <div>ProfileMember</div>
+    <div><NotFound /></div>
   )
 }
-
-export default ProfileMember
