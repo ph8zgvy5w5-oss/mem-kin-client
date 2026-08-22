@@ -8,6 +8,7 @@ export default function AuthProvider({ children }) {
     const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
 
+
     const login = async (body) => {
         try {
             setLoading(true)
@@ -16,13 +17,14 @@ export default function AuthProvider({ children }) {
             if (response.status === 200 ){
                 setUser(response.data.user)
                 localStorage.setItem("authToken", response.data.token)
-                navigate("/task")
+                navigate("/family")
             }
         } catch (error) {
             console.log(error)
             console.log(error.response)
         } finally {
             setLoading(false)
+            
         }
     }
 

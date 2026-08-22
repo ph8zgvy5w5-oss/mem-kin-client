@@ -1,38 +1,54 @@
-import "../styles/loading.module.css"
-import { useState } from "react"
-import FamilyMember from "../components/FamilyMember"
+//import { useEffect, useState } from "react"
+//import FamilyMember from "../components/FamilyMember"
+//import { useFamilly } from "../lib/useFamilly"
+import AddAMember from "./AddAMember"
+import CreateFamilly from "./CreateFamilly"
+
 
 function Familypage() {
-  const [members, setMembers] = useState([
-    {
-      id: 1,
-      name: "Emma",
-      role: "Parent",
-    },
-    {
-      id: 2,
-      name: "Alex",
-      role: "Parent",
-    },
-  ])
+
+ 
+
+
+  return (
+
+     <div className=" flex flex-col p-10  ">
+        <div>
+
+
+
+        </div>
+      <CreateFamilly />
+<br />
+      <AddAMember />
+
+  </div>
+
+  
+
+  )
+ 
+
+
+  /* const { familly } = useFamilly()
 
   const [isFormOpen, setIsFormOpen] = useState(false)
 
   const [name, setName] = useState("")
   const [role, setRole] = useState("Member")
 
-  const addMember = (event) => {
+  const addUserToFamilly = (event) => {
     event.preventDefault()
 
     if (!name.trim()) return
 
-    const newMember = {
-      id: Date.now(),
+   
+
+    console.log({
+      famillyId: familly._id,
       name,
       role,
-    }
-
-    setMembers([...members, newMember])
+    })
 
     setName("")
     setRole("Member")
@@ -41,7 +57,8 @@ function Familypage() {
 
   return (
     <div className="p-6">
-      
+
+     
 
       <div className="mb-8">
         <p className="text-sm text-gray-500">
@@ -49,16 +66,19 @@ function Familypage() {
         </p>
 
         <h1 className="text-3xl font-bold">
-          The Smith Family
+          {familly?.famillyName}
         </h1>
       </div>
 
-      
+
+    
 
       <div className="mb-8">
+
         <div className="mb-4 flex items-center justify-between">
+
           <h2 className="text-xl font-semibold">
-            Family Members
+            Family members
           </h2>
 
           <button
@@ -67,39 +87,55 @@ function Familypage() {
           >
             + Add member
           </button>
+
         </div>
+
 
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {members.map((member) => (
+
+          {familly?.users?.map((user) => (
             <FamilyMember
-              key={member.id}
-              member={member}
+              key={user._id}
+              user={user}
             />
           ))}
+
         </div>
+
       </div>
 
-      
 
-      {isFormOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black/40 p-4">
+    
+
+      /* {isFormOpen && (
+
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4">
+
           <div className="w-full max-w-md rounded-2xl bg-white p-6 shadow-xl">
 
             <div className="mb-6 flex items-center justify-between">
+
               <h2 className="text-xl font-semibold">
-                Add a family member
+                Add a member to {familly?.famillyName}
               </h2>
 
-              <button onClick={() => setIsFormOpen(false)}>
+              <button
+                type="button"
+                onClick={() => setIsFormOpen(false)}
+              >
                 ✕
               </button>
+
             </div>
 
+
             <form
-              onSubmit={addMember}
+              onSubmit={addUserToFamilly}
               className="space-y-4"
             >
+
               <div>
+
                 <label className="mb-1 block text-sm">
                   Name
                 </label>
@@ -108,12 +144,15 @@ function Familypage() {
                   type="text"
                   value={name}
                   onChange={(event) => setName(event.target.value)}
-                  className="w-72 bg-red-200 rounded-2xl shadow-lg p-6 transition-transform duration-300 hover:scale-105"
+                  className="w-full rounded-xl border p-3"
                   placeholder="Family member name"
                 />
+
               </div>
 
+
               <div>
+
                 <label className="mb-1 block text-sm">
                   Role
                 </label>
@@ -127,9 +166,12 @@ function Familypage() {
                   <option value="Child">Child</option>
                   <option value="Member">Member</option>
                 </select>
+
               </div>
 
+
               <div className="flex justify-end gap-3 pt-4">
+
                 <button
                   type="button"
                   onClick={() => setIsFormOpen(false)}
@@ -144,14 +186,19 @@ function Familypage() {
                 >
                   Add member
                 </button>
+
               </div>
+
             </form>
 
           </div>
+
         </div>
+
       )}
+
     </div>
-  )
+  ) */
 }
 
-export default Familypage
+export default Familypage 

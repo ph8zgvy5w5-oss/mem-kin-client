@@ -1,4 +1,4 @@
-import image404 from "../src/assets/404.webp";
+import image404 from "../src/assets/404.jpg";
 
 function NotFound() {
   const notFound = {
@@ -10,7 +10,7 @@ function NotFound() {
       <img
         src={notFound.image}
         alt="Page not found"
-        className="w-36 h-36 mx-auto mb-4 object-cover"
+        className=" min-h-screen h-max mx-auto mb-4 object-cover"
       />
     </div>
   );

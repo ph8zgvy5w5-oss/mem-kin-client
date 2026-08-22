@@ -1,8 +1,9 @@
 import "../styles/loading.module.css"
+import NotFound from "./NotFound"
 
 function Profilpage() {
   return (
-    <div>Profilepage</div>
+    <div><NotFound/></div>
   )
 }
 

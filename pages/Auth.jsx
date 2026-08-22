@@ -25,10 +25,12 @@ console.log(userInfo)
     <form className="min-h-screen grid items-start gap-8 p-18 shadow-2xl rounded-b-full shadow-red-200" 
       onSubmit={(e) => {
       e.preventDefault()
+
       const body ={ email: userInfo.loginInfo, password: userInfo.password }
       login(body)
     }}>
-       <p className="bg-red-100 rounded-2xl text-blue-950 p-1 text-center"> You don't have an account 👩🏽‍💻 ?{" "} <button className="bg-blue-950 text-amber-50 rounded-2xl cursor-grab" type="button" onClick={() => setLogginIn(false)}>
+       <p className="bg-red-100 rounded-2xl text-blue-950 p-1 text-center"> You don't have an account 👩🏽‍💻 ?{" "} 
+       <button className="bg-blue-950 text-amber-50 rounded-2xl cursor-grab" type="button" onClick={() => setLogginIn(false)}>
         Sign up 🔐
        </button>
         </p>
@@ -50,6 +52,7 @@ console.log(userInfo)
         <form className="grid grid-cols-1 md:grid-cols-2 gap-6 p-10 min-h-screen items-start shadow-2xl rounded-b-full shadow-red-200" 
         onSubmit={(e) => {
         e.preventDefault()
+        
         //const body ={ loginInfo: userInfo.loginInfo, password: userInfo.password }
         signup({ username: userInfo.username, email: userInfo.email, password: userInfo.password, role: userInfo.role },
         setLogginIn, setUserInfo,
